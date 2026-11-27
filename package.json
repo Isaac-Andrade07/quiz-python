@@ -1,0 +1,11 @@
+{
+  "name": "quiz-python",
+  "version": "1.0.0",
+  "description": "Quiz de Python para iniciantes com tempo, pontuação, ranking e revisão dos erros.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js"
+  },
+  "author": "Isaac Andrade",
+  "license": "MIT"
+}
