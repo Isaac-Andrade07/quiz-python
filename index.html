@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz de Python para Iniciantes</title>
+  <meta name="description" content="Teste seus conhecimentos de Python com perguntas para iniciantes, tempo, pontuação e ranking.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%233776ab%27/%3E%3Ctext x=%2730%27 y=%2728%27 font-family=%27Arial%27 font-weight=%27700%27 font-size=%2716%27 fill=%27%23ffd43b%27 text-anchor=%27end%27%3EPy%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="topo">
+      <span class="selo">Py</span>
+      <div>
+        <h1>Quiz de Python</h1>
+        <p class="sub">Para quem está começando</p>
+      </div>
+    </header>
+
+    <!-- Tela inicial -->
+    <section id="tela-inicio" class="cartao">
+      <h2>Bora testar o que você sabe?</h2>
+      <p class="muted">Cada acerto vale 100 pontos + bônus de até 50 por rapidez. Você tem <strong>20 segundos</strong> por pergunta.</p>
+      <form id="form-inicio">
+        <label for="nome">Seu nome</label>
+        <input id="nome" maxlength="20" placeholder="Ex.: Isaac" autocomplete="off">
+
+        <div class="linha">
+          <div>
+            <label for="categoria">Tema</label>
+            <select id="categoria"></select>
+          </div>
+          <div>
+            <label for="quantidade">Perguntas</label>
+            <select id="quantidade">
+              <option value="5">5</option>
+              <option value="10" selected>10</option>
+              <option value="15">15</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn">Começar</button>
+      </form>
+
+      <h3>🏆 Ranking</h3>
+      <ol id="ranking" class="ranking"></ol>
+      <button id="limpar-ranking" class="btn-link" type="button">Limpar ranking</button>
+    </section>
+
+    <!-- Tela da pergunta -->
+    <section id="tela-pergunta" class="cartao" hidden>
+      <div class="status">
+        <span id="progresso"></span>
+        <span id="categoria-atual" class="tag"></span>
+        <span id="pontos-atuais"></span>
+      </div>
+      <div class="barra"><div id="barra-tempo"></div></div>
+      <h2 id="texto-pergunta"></h2>
+      <pre id="codigo" hidden><code></code></pre>
+      <div id="opcoes" class="opcoes"></div>
+      <p id="feedback" class="feedback" aria-live="polite"></p>
+      <button id="proxima" class="btn" hidden>Próxima</button>
+    </section>
+
+    <!-- Tela de resultado -->
+    <section id="tela-resultado" class="cartao" hidden>
+      <h2 id="titulo-resultado"></h2>
+      <div class="placar">
+        <div><strong id="res-pontos"></strong><span>pontos</span></div>
+        <div><strong id="res-acertos"></strong><span>acertos</span></div>
+        <div><strong id="res-percentual"></strong><span>aproveitamento</span></div>
+      </div>
+      <h3>Por tema</h3>
+      <ul id="res-categorias" class="categorias"></ul>
+      <h3 id="titulo-revisao">Revise o que você errou</h3>
+      <div id="revisao"></div>
+      <button id="jogar-novamente" class="btn">Jogar novamente</button>
+    </section>
+
+    <footer>
+      Feito por <a href="https://github.com/isaac-andrade07" target="_blank" rel="noopener">Isaac Andrade</a> ·
+      <a href="https://github.com/isaac-andrade07/quiz-python" target="_blank" rel="noopener">código no GitHub</a>
+    </footer>
+  </main>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
